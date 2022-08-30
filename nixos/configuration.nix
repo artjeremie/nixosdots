@@ -52,11 +52,13 @@
   services = {
     xserver = {
       enable = true;
-      displayManager = true;
-      defaultSession = "xfce";
+      displayManager = {
+        lightdm.enable = true;
+	defaultSession = "xfce";
+      };
+      desktopManager.xfce.enable = true;
+      windowManager.bspwm.enable = true;
     };
-    desktopManager.xfce.enable = true;
-    windowManager.bspwm.enable = true;
   };
 
   # Configure keymap in X11

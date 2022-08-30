@@ -3,7 +3,7 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.05";
+    nixpkgs-linux.url = "github:nixos/nixpkgs/nixos-22.05";
     hardware.url = "github:nixos/nixos-hardware";
 
     # Home manager
@@ -20,7 +20,7 @@
   outputs = { nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations = {
       # FIXME replace with your hostname
-      hoaxdream = nixpkgs.lib.nixosSystem {
+      art = nixpkgs.lib.nixosSystem {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         specialArgs = { inherit inputs; }; # Pass flake inputs to our config
         # > Our main nixos configuration file <
